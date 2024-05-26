@@ -16,7 +16,7 @@ using SmtpClient smtp = new();
 await smtp.ConnectAsync("mail.privateemail.com", 25, MailKit.Security.SecureSocketOptions.StartTls);
 var creds = new NetworkCredential("donotreply@vndotnet.homes", "zxcvbnm123.", "vndotnet.homes");
 var c = CredentialCache.DefaultNetworkCredentials;
-await smtp.AuthenticateAsync(c);
+await smtp.AuthenticateAsync(creds);
 await smtp.SendAsync(message);
 await smtp.DisconnectAsync(true);
 
