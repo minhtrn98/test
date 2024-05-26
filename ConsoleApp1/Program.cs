@@ -12,7 +12,7 @@ message.Body = new TextPart(TextFormat.Html) { Text = "<h2>TESTING</h2>" };
 
 
 using SmtpClient smtp = new();
-await smtp.ConnectAsync("mail.privateemail.com", 465);
+await smtp.ConnectAsync("mail.privateemail.com", 25, MailKit.Security.SecureSocketOptions.StartTls);
 await smtp.SendAsync(message);
 await smtp.DisconnectAsync(true);
 
