@@ -13,7 +13,7 @@ message.Body = new TextPart(TextFormat.Html) { Text = "<h2>TESTING</h2>" };
 
 
 using SmtpClient smtp = new();
-await smtp.ConnectAsync("mail.privateemail.com", 465, MailKit.Security.SecureSocketOptions.StartTls);
+await smtp.ConnectAsync("mail.privateemail.com", 465, MailKit.Security.SecureSocketOptions.Auto);
 var creds = new NetworkCredential("donotreply@vndotnet.homes", "zxcvbnm123.", "vndotnet.homes");
 var c = CredentialCache.DefaultNetworkCredentials;
 await smtp.AuthenticateAsync(creds);
